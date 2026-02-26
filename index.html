@@ -1,47 +1,48 @@
-    <!-- 
-        Kenneth Avendano
-        2/8/26
-        Description: Homepage for ichacaps
-    -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>booknow</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-    <div class="header-container">
-        <div class="header-left">
-            <a href="index.html" class="logo">
-                <img src="images/IchacapsLogo.png" alt="Ichacaps" class="logo-img" />
-            </a>
+    <header>
+    <nav>
+        <div><img src="images/IchacapsLogo.png" alt="Ichacaps" class="logo-img"/></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="About.html">About</a></li>
+        </ul>
+        <div class="btn">
+            <a href="booknow.html" class="book-btn">Book Now</a>
         </div>
+    </nav>
+</header>
 
-        <div class="header-right">
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="Portfolio.html">Portfolio</a>
-                <a href="About.html">About</a>
-                <a href="Contact.html">Contact</a>
-            </nav>
+    <main class="hero-container">
+        <div class="hero-text">
+            <h1>Capturing Life's Beautiful Moments</h1>
+            <p>Professional photography for sports, portraits, and special events</p>
         </div>
-    </div>
-    </header>
-
-    <main class="content-container">
-        <h1>Capturing Life's Beautiful Moments</h1>
-        <p>Professional photography for sports, portraits, and special events</p>
-        <button id="portfolio-button">View Portfolio</button>
-
+        <a href="booknow.html" class="book-btn">Book Now</a>
     </main>
 
-    <script src="js/main.js"></script>
+    <section class="locations">
+        <div class="location-grid">
+            <span>RI</span>
+            <span>MA</span>
+            <span>CT</span>
+        </div>
+    </section>
+
+
+
+
 
 </body>
 

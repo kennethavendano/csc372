@@ -1,67 +1,66 @@
-const http = require("http");
-const fs = require("fs");
 const path = require("path");
+const express = require("express");
+const exphbs = require("express-handlebars");
 
-const PORT = 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-function getContentType(filePath) {
-  const ext = path.extname(filePath).toLowerCase();
-  if (ext === ".html") return "text/html; charset=utf-8";
-  if (ext === ".css") return "text/css; charset=utf-8";
-  if (ext === ".js") return "text/javascript; charset=utf-8";
-  if (ext === ".png") return "image/png";
-  if (ext === ".jpg" || ext === ".jpeg") return "image/jpeg";
-  if (ext === ".svg") return "image/svg+xml";
-  return "application/octet-stream";
-}
 
-function serveStaticFile(res, filePath, statusCode) {
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
-      res.end("500 - Server Error");
-      return;
-    }
-    res.writeHead(statusCode, { "Content-Type": getContentType(filePath) });
-    res.end(data);
-  });
-}
+app.engine("handlebars", exphbs.engine({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-function normUrl(url) {
-  let clean = url.split("?")[0].toLowerCase();
-  if (clean.length > 1 && clean.endsWith("/")) clean = clean.slice(0, -1);
-  return clean;
-}
+app.use(express.static(path.join(__dirname, "public")));
 
-const server = http.createServer((req, res) => {
-  const publicDir = path.join(__dirname, "public");
-  const urlPath = normaUrl(req.url);
 
-  const routes = {
-    "/": "index.html",
-    "/portfolio": "portfolio.html",
-    "/services": "services.html",
-    "/about": "about.html",
-    "/book": "book.html"
-  };
-
-  if (routes[urlPath]) {
-    const pagePath = path.join(publicDir, routes[urlPath]);
-    return fs.access(pagePath, fs.constants.F_OK, (err) => {
-      if (err) return serveStaticFile(res, path.join(publicDir, "404.html"), 404);
-      serveStaticFile(res, pagePath, 200);
-    });
-  }
-
-  const safePath = path.normize(urlPath).replace(/^(\.\.[\/\\])+/, "");
-  const filePath = path.join(publicDir, safePath);
-
-  fs.access(filePath, fs.constants.F_OK, (err) => {
-    if (err) return serveStaticFile(res, path.join(publicDir, "404.html"), 404);
-    serveStaticFile(res, filePath, 200);
+app.get("/", (req, res) => {
+  res.render("home", {
+    pageTitle: "Home",
+    message: "Welcome to Ichacaps Sports Photography"
   });
 });
 
-server.listen(PORT);
+app.get("/portfolio", (req, res) => {
+  res.render("portfolio", {
+    pageTitle: "Portfolio",
+    galleryCount: 6
+  });
+});
 
-console.log("Server running at http://localhost:" + PORT);
+app.get("/services", (req, res) => {
+  res.render("services", {
+    pageTitle: "Services",
+    promo: "Professional photography packages available."
+  });
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", {
+    pageTitle: "About",
+    bio: "Sports photographer capturing action moments."
+  });
+});
+
+app.get("/book", (req, res) => {
+  res.render("book", {
+    pageTitle: "Book",
+    bookingNote: "Fill out the form and we will contact you soon."
+  });
+});
+
+
+app.use((req, res) => {
+  res.status(404).render("404", {
+    pageTitle: "404 - Page Not Found"
+  });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).render("500", {
+    pageTitle: "500 - Server Error"
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});

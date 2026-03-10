@@ -209,7 +209,7 @@
     color: rgb(255, 255, 255);
 }
 
-/* Gallery Grid - Using CSS Grid for precise control [citation:1] */
+/* Gallery Grid */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -244,7 +244,6 @@
     opacity: 1;
 }
 
-/* Overlay for captions */
 .overlay {
     position: absolute;
     bottom: 0;
@@ -265,4 +264,44 @@
 .overlay p {
     font-size: 20px;
     opacity: 0.9;
+    
 }
+
+/* Services Page with PHP*/
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.service-image {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-text {
+    padding: 15px;
+    background-color: white;
+}
+
+.service-text h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.service-text p {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+

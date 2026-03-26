@@ -75,8 +75,8 @@ $package2 = new PhotoPackage(
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="services.php">Services</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+                <li><a href="login.php">Login</a></li>
+                </ul>
             <div class="btn">
                 <a href="booknow.html" class="book-btn">Book Now</a>
             </div>

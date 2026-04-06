@@ -1,61 +1,31 @@
-<?php
+<?php 
 
-class PhotoPackage
-{
-    public string $name;
-    public float $price;
-    public string $duration;
-    public int $photoCount;
-    public string $sport;
-    public string $image;
+require_once 'includes/database-connection.php';
 
-    public function __construct(string $name, float $price, string $duration, int $photoCount, string $sport, string $image)
-    {
-        $this->name = $name;
-        $this->price = $price;
-        $this->duration = $duration;
-        $this->photoCount = $photoCount;
-        $this->sport = $sport;
-        $this->image = $image;
-    }
 
-    public function getFormattedPrice(): string
-    {
-        return "$" . number_format($this->price, 2);
-    }
 
-    public function getPackageSummary(): string
-    {
-        return $this->duration . " session with " . $this->photoCount . " edited photos";
-    }
 
-    public function getPackageLevel(): string
-    {
-        if ($this->price >= 120) {
-            return "Premium Package";
-        } else {
-            return "Starter Package";
-        }
-    }
-}
 
-$package1 = new PhotoPackage(
-    "Starter",
-    99.99,
-    "30 minutes",
-    15,
-    "Soccer",
-    "https://drive.google.com/thumbnail?id=14Iz8-6TK_h-p3HNhFPrjUuiSXlOqrghc&sz=s2200"
-);
+    /*
+	 * Retrieve toy information from the database based on the toy ID.
+	 * 
+	 * @param PDO $pdo       An instance of the PDO class.
+	 * @param string $id     The ID of the toy to retrieve.
+	 * @return array|null    An associative array containing the toy information, or null if no toy is found.
+	 */
+	function get_service(PDO $pdo) {
+		                                                    // SQL query to retrieve toy information based on the toy ID
+		$sql = "SELECT * 
+			FROM services";	                        // :id is a placeholder for value provided later 
+		                                                    // It's a parameterized query that helps prevent SQL injection attacks and ensures safer interaction with the database
 
-$package2 = new PhotoPackage(
-    "Pro",
-    149.99,
-    "1 hour",
-    30,
-    "Basketball",
-    "https://drive.google.com/thumbnail?id=11_EckoCQV8iec9E0v9cwoPmrvgwJ0-w-&sz=s2200"
-);
+		                                                    // Execute the SQL query using the pdo function and fetch the result
+		$services = pdo($pdo, $sql)->fetchAll();		// Associative array where 'id' is the key and $id is the value. Used to bind the value of $id to the placeholder :id in SQL query.
+
+		return $services;                                        // Return the toy information (associative array)
+	}
+
+	$services = get_service($pdo);                          // Retrieve info about toy with ID '0001' from the database using provided PDO connection
 ?>
 
 <!DOCTYPE html>
@@ -84,37 +54,19 @@ $package2 = new PhotoPackage(
     </header>
 
     <main>
-    <h1 class="page-title">Services</h1>
+    <?php foreach ($services as $service): ?>
+        <div class="services-catalog">
+        <!-- LINK WITH ID -->
+        <a href="service_details.php?id=<?= $service['serviceID'] ?>">
+            <img src="<?= $service['img_src'] ?>" alt="<?= $service['title'] ?>">
+        </a>
 
-    <div class="gallery">
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="<?= $package1->image; ?>" alt="Starter package image">
-            </div>
-            <div class="service-text">
-                <h3><?= $package1->name; ?></h3>
-                <p>Sport: <?=  $package1->sport; ?></p>
-                <p><?=  $package1->getPackageSummary(); ?></p>
-                <p>Price: <?=  $package1->getFormattedPrice(); ?></p>
-                <p><?= $package1->getPackageLevel(); ?></p>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="<?= $package2->image; ?>" alt="Pro package image">
-            </div>
-            <div class="service-text">
-                <h3><?=  $package2->name; ?></h3>
-                <p>Sport: <?=  $package2->sport; ?></p>
-                <p><?=  $package2->getPackageSummary(); ?></p>
-                <p>Price: <?=   $package2->getFormattedPrice(); ?></p>
-                <p><?=  $package2->getPackageLevel(); ?></p>
-            </div>
-        </div>
+        <h2><?= $service['title'] ?></h2>
+        <p><?= $service['description'] ?></p>
 
     </div>
+<?php endforeach; ?>
+    
 </main>
 </body>
 </html>

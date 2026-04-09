@@ -1,4 +1,6 @@
-<?php                                             // Opening PHP tag
+<?php  
+
+// Opening PHP tag
 
 $type     = 'mysql';                             // Type of database
 $server   = '192.185.2.183';                    // Server the database is on
@@ -47,5 +49,4 @@ function pdo(PDO $pdo, string $sql, array $arguments = null)
         $statement->execute($arguments);  // Bind & execute SQL statement w/provided arguments
         return $statement;               // Return PDOStatement object
     }
-                                          
-// Closing PHP tag  ?>   
+                

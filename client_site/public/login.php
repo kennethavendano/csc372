@@ -1,7 +1,11 @@
 <?php
 
-require_once 'includes/database-connection.php';
-require_once 'includes/session.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include 'includes/header.php';
+
 
 $error = '';
 
@@ -25,29 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Please fill in all fields";
     }
 }
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<header>
-    <nav>
-        <div><img src="images/IchacapsLogo.png" alt="Ichacaps" class="logo-img"></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="services.php">Services</a></li>
-        </ul>
-    </nav>
-</header>
 
 <div class="login-form">
 

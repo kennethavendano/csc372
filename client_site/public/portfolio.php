@@ -1,28 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-<body>
-    <header>
-        <nav>
-            <div><img src="images/IchacapsLogo.png" alt="Ichacaps" class="logo-img"/></div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="login.php">Login</a></li>
-            </ul>
-            <div class="btn">
-                <a href="booknow.html" class="book-btn">Book Now</a>
-            </div>
-        </nav>
-    </header>
+	include 'includes/header.php';
+
+?>
 
     <main>
         <h1 class="page-title">Portfolio</h1>

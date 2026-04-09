@@ -1,0 +1,33 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+	include 'includes/header.php';
+
+?>
+
+    <main class="hero-container">
+        <div class="hero-text">
+            <h1>Capturing Life's Beautiful Moments</h1>
+            <p>Professional photography for sports, portraits, and special events</p>
+        </div>
+        <a href="booknow.html" class="book-btn">Book Now</a>
+    </main>
+
+    <section class="locations">
+        <div class="location-grid">
+            <span>RI</span>
+            <span>MA</span>
+            <span>CT</span>
+        </div>
+    </section>
+
+
+
+
+
+</body>
+
+</html>

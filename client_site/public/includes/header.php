@@ -1,3 +1,9 @@
+<?php
+require_once 'includes/session.php';
+require_once 'includes/database-connection.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +19,8 @@
         <nav>
             <div><img src="images/IchacapsLogo.png" alt="Ichacaps" class="logo-img"/></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="portfolio.php">Portfolio</a></li>
                 <li><a href="services.php">Services</a></li>
                 <li><a href="login.php">Login</a></li>
             </ul>
@@ -23,27 +29,3 @@
             </div>
         </nav>
 </header>
-
-    <main class="hero-container">
-        <div class="hero-text">
-            <h1>Capturing Life's Beautiful Moments</h1>
-            <p>Professional photography for sports, portraits, and special events</p>
-        </div>
-        <a href="booknow.html" class="book-btn">Book Now</a>
-    </main>
-
-    <section class="locations">
-        <div class="location-grid">
-            <span>RI</span>
-            <span>MA</span>
-            <span>CT</span>
-        </div>
-    </section>
-
-
-
-
-
-</body>
-
-</html>

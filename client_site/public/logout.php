@@ -1,6 +1,8 @@
 <?php
 
-require_once 'includes/session.php';
+include 'includes/header.php';
+
+
 
 logout();
 header('Location: login.php');

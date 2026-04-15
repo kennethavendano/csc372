@@ -1,7 +1,7 @@
 <?php
 
-require_once 'includes/database-connection.php';
-require_once 'includes/session.php';
+include 'includes/header.php';
+
 
 require_login($logged_in);
 
@@ -15,26 +15,6 @@ if (!$user) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-    <nav>
-        <div><img src="images/IchacapsLogo.png" alt="Ichacaps" class="logo-img"></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="services.php">Services</a></li>
-        </ul>
-    </nav>
-</header>
 
 <div class="profile-container">
     <h1>My Profile</h1>

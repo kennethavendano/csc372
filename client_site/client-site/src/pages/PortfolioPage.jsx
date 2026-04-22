@@ -1,8 +1,3 @@
-/**
- * PortfolioPage — filter state (useState) and gallery .map(); filter uses .filter().
- * Kenneth Avendano — 2026-04-22
- */
-
 import { useState, useMemo } from 'react'
 import PageHeading from '../components/PageHeading.jsx'
 import GalleryItemCard from '../components/GalleryItemCard.jsx'

@@ -1,8 +1,3 @@
-/**
- * AboutPage — about copy (static HTML files were empty on v2; content matches site tone).
- * Kenneth Avendano — 2026-04-22
- */
-
 import PageHeading from '../components/PageHeading.jsx'
 
 export default function AboutPage() {

@@ -1,8 +1,3 @@
-/**
- * Service offerings for the Services page (.map() source).
- * Kenneth Avendano — 2026-04-22
- */
-
 export const services = [
   {
     id: 'sports',

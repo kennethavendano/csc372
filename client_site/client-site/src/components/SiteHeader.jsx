@@ -1,8 +1,3 @@
-/**
- * SiteHeader — logo, mobile menu toggle (useState), and SiteNav with props.
- * Kenneth Avendano — 2026-04-22
- */
-
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SiteNav from './SiteNav.jsx'

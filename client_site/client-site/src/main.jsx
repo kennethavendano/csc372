@@ -1,8 +1,3 @@
-/**
- * main.jsx — React entry; loads global styles for the client site.
- * Kenneth Avendano — 2026-04-22
- */
-
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'

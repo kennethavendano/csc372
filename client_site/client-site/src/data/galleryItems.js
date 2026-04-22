@@ -1,8 +1,3 @@
-/**
- * Portfolio gallery items (filtered immutably on the Portfolio page).
- * Kenneth Avendano — 2026-04-22
- */
-
 export const galleryItems = [
   {
     id: 'g1',

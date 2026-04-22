@@ -1,8 +1,3 @@
-/**
- * ServicesPage — services rendered with .map() and ServiceCard props.
- * Kenneth Avendano — 2026-04-22
- */
-
 import PageHeading from '../components/PageHeading.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import { services } from '../data/services.js'

@@ -1,12 +1,3 @@
-/**
- * App — React Router routes for the Ichacaps client site (Assignment 8).
- * Kenneth Avendano — 2026-04-22
- *
- * AI-assisted suggestion: Cursor was used to scaffold components, routes, and
- * form validation from the static HTML/CSS in client_site; follow your course
- * AI policy and attach your own AI documentation link if required.
- */
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SiteLayout from './components/SiteLayout.jsx'
 import HomePage from './pages/HomePage.jsx'

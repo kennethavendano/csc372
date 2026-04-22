@@ -1,8 +1,3 @@
-/**
- * HomePage — hero and region strip (static v2 content).
- * Kenneth Avendano — 2026-04-22
- */
-
 import { Link } from 'react-router-dom'
 import LocationStrip from '../components/LocationStrip.jsx'
 

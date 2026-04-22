@@ -1,8 +1,3 @@
-/**
- * BookingForm — controlled fields, validation, immutable state updates.
- * Kenneth Avendano — 2026-04-22
- */
-
 import { useState } from 'react'
 
 const initialForm = {

@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Starts the app and loads global CSS.
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'

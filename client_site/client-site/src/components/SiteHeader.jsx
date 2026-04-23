@@ -1,9 +1,13 @@
+// Kenneth Avendano
+// 4/22/2026
+// Top bar with logo, nav, and mobile menu toggle.
+
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SiteNav from './SiteNav.jsx'
 
 export default function SiteHeader({ links }) {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false) // small screens: show/hide nav links
 
   const closeMenu = () => setMenuOpen(false)
 

@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Booking form with controlled inputs and validation.
+
 import { useState } from 'react'
 
 const initialForm = {
@@ -23,7 +27,7 @@ export default function BookingForm() {
   }
 
   const validate = () => {
-    const next = {}
+    const next = {} // field errors collected here, then saved to state
     if (!form.fullName.trim()) next.fullName = 'Name is required.'
     if (!form.email.trim()) next.email = 'Email is required.'
     else if (!emailOk(form.email)) next.email = 'Enter a valid email address.'

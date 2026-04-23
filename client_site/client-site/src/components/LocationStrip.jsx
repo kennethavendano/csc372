@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Home page region labels from props.
+
 export default function LocationStrip({ regions }) {
   return (
     <section className="locations" aria-label="Service regions">

@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Home hero and service areas.
+
 import { Link } from 'react-router-dom'
 import LocationStrip from '../components/LocationStrip.jsx'
 

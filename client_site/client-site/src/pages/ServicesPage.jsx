@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Lists services from data with ServiceCard.
+
 import PageHeading from '../components/PageHeading.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import { services } from '../data/services.js'

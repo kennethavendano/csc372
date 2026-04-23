@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// About page text.
+
 import PageHeading from '../components/PageHeading.jsx'
 
 export default function AboutPage() {

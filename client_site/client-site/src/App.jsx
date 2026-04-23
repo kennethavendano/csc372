@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Defines all routes for the site.
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SiteLayout from './components/SiteLayout.jsx'
 import HomePage from './pages/HomePage.jsx'

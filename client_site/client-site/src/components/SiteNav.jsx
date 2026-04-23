@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Renders nav links from the links prop.
+
 import { NavLink } from 'react-router-dom'
 
 export default function SiteNav({ links, isOpen, onNavigate }) {

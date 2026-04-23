@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Portfolio images and filter categories.
+
 export const galleryItems = [
   {
     id: 'g1',

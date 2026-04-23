@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Services list for the Services page.
+
 export const services = [
   {
     id: 'sports',

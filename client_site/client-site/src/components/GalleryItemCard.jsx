@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// One portfolio image tile from props.
+
 export default function GalleryItemCard({ item }) {
   const { image, title, caption, category } = item
   return (

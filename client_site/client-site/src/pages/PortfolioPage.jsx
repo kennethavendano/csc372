@@ -1,3 +1,7 @@
+// Kenneth Avendano
+// 4/22/2026
+// Portfolio gallery with category filter.
+
 import { useState, useMemo } from 'react'
 import PageHeading from '../components/PageHeading.jsx'
 import GalleryItemCard from '../components/GalleryItemCard.jsx'
@@ -8,6 +12,7 @@ export default function PortfolioPage() {
 
   const visibleItems = useMemo(
     () =>
+      // keep all items in data; only pick what matches the active filter
       galleryItems.filter(
         (item) => activeFilter === 'all' || item.category === activeFilter,
       ),

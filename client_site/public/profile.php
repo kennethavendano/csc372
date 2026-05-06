@@ -16,6 +16,7 @@ if (!$user) {
 ?>
 
 
+<main>
 <div class="profile-container">
     <h1>My Profile</h1>
 
@@ -31,6 +32,6 @@ if (!$user) {
         <a href="logout.php" class="profile-action-btn">Logout</a>
     </div>
 </div>
+</main>
 
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

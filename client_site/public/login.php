@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 
+<main>
 <div class="login-form">
 
     <h1>Login</h1>
@@ -55,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
 </div>
+</main>
 
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

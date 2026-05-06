@@ -12,6 +12,7 @@ require_once 'includes/database-connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ichacaps</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -22,10 +23,11 @@ require_once 'includes/database-connection.php';
                 <li><a href="index.php">Home</a></li>
                 <li><a href="portfolio.php">Portfolio</a></li>
                 <li><a href="services.php">Services</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="login.php">Login</a></li>
             </ul>
             <div class="btn">
-                <a href="booknow.html" class="book-btn">Book Now</a>
+                <a href="booknow.php" class="book-btn">Book Now</a>
             </div>
         </nav>
 </header>

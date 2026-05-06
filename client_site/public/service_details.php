@@ -28,25 +28,27 @@ if (!$service) {
 
 
 
-<div class="service-details-page">
-  <div class="service-details-container">
+<main>
+  <h1 class="page-title"><?= $service['title'] ?></h1>
 
-    <div class="service-image">
-      <img src="<?= $service['img_src'] ?>">
-    </div>
+  <div class="service-details-page">
+    <div class="service-details-container">
 
-    <div class="service-details">
-      <h1><?= $service['title'] ?></h1>
-      <p><?= $service['description'] ?></p>
-      <p>Sport: <?= $service['sport'] ?></p>
-    </div>
+      <div class="service-image">
+        <img src="<?= $service['img_src'] ?>">
+      </div>
+
+      <div class="service-details">
+        <p><?= $service['description'] ?></p>
+        <p>Sport: <?= $service['sport'] ?></p>
+      </div>
     
+    </div>
+
+    <a class="service-back-link" href="services.php">Back to Services</a>
+
   </div>
-
-  <a href="services.php">Back</a>
-
-</div>
+</main>
 
 
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

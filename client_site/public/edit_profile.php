@@ -52,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 
+<main>
 <div class="profile-form-container">
     <h1>Edit Profile</h1>
 
@@ -84,6 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="profile.php" class="profile-link-btn">Back to Profile</a>
     </form>
 </div>
+</main>
 
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

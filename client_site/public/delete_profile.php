@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 
+<main>
 <div class="delete-profile-container">
     <h1>Delete Profile</h1>
     <p>Are you sure you want to delete your profile?</p>
@@ -42,6 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="profile.php" class="cancel-btn">Cancel</a>
     </form>
 </div>
+</main>
 
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

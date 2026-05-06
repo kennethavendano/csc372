@@ -51,6 +51,5 @@ $services = get_service($pdo);                          // Retrieve info about t
 
 
 </main>
-</body>
 
-</html>
+<?php include 'includes/footer.php'; ?>

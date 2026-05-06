@@ -9,7 +9,7 @@
             <h1>Capturing Life's Beautiful Moments</h1>
             <p>Professional photography for sports, portraits, and special events</p>
         </div>
-        <a href="booknow.html" class="book-btn">Book Now</a>
+        <a href="booknow.php" class="book-btn">Book Now</a>
     </main>
 
     <section class="locations">
@@ -19,13 +19,5 @@
             <span>CT</span>
         </div>
     </section>
-
-
-
-
-
-</body>
-
-</html>
 
 <?php include 'includes/footer.php'; ?>

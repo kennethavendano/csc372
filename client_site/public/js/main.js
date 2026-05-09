@@ -33,4 +33,43 @@ document.addEventListener("DOMContentLoaded", () => {
       filterButtons.find((b) => b.classList.contains("active")) || filterButtons[0];
     applyFilter(initiallyActive?.getAttribute("data-filter") || "all");
   }
+
+  // Quote generator (works on pages with #quote-box + #new-quote-btn)
+  const quoteBox = document.getElementById("quote-box");
+  const quoteButton = document.getElementById("new-quote-btn");
+
+  if (quoteBox && quoteButton) {
+    async function loadQuote() {
+      quoteBox.textContent = "Loading inspiration...";
+
+      try {
+        const response = await fetch(
+          "https://zenquotes.io/api/random"
+        );
+
+        if (!response.ok) {
+          throw new Error("Quote request failed");
+        }
+
+        const data = await response.json();
+
+        // ZenQuotes returns an array like: [{ q: "...", a: "Author" }]
+        const quote = Array.isArray(data) ? data[0] : null;
+        const content = quote?.q;
+        const author = quote?.a;
+
+        if (!content || !author) {
+          throw new Error("Unexpected quote format");
+        }
+
+        quoteBox.innerHTML = `"${content}"<br><br>— ${author}`;
+      } catch (error) {
+        console.error(error);
+        quoteBox.textContent = "Unable to load inspiration right now.";
+      }
+    }
+
+    quoteButton.addEventListener("click", loadQuote);
+    loadQuote();
+  }
 });

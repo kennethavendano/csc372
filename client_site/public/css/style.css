@@ -542,6 +542,14 @@
     font-family: sans-serif;
 }
 
+.form-message--error {
+    color: #b00020;
+}
+
+.form-message--success {
+    color: #0b6b2e;
+}
+
 .profile-form .form-group {
     margin-bottom: 10px;
 }
@@ -590,6 +598,52 @@
 
 .profile-link-btn:hover {
     background-color: #497a9e;
+}
+
+/* =========================
+   QUOTE GENERATOR
+========================= */
+.quote-generator {
+    max-width: 720px;
+    margin: 30px auto 0;
+    padding: 18px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+}
+
+.quote-generator__title {
+    margin: 0 0 12px;
+    text-align: center;
+    color: #111;
+}
+
+.quote-generator__box {
+    margin: 0 0 14px;
+    padding: 14px 16px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    background: #fafafa;
+    color: #222;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.quote-generator__btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.quote-generator__btn:hover {
+    background: #333;
 }
 
 /* =========================

@@ -3,6 +3,7 @@
 include 'includes/header.php';
 
 $message = '';
+$messageClass = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
@@ -23,8 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
 
         $message = "Account created successfully.";
+        $messageClass = "form-message--success";
     } else {
         $message = "Please fill in all fields.";
+        $messageClass = "form-message--error";
     }
 }
 ?>
@@ -36,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Sign Up</h1>
 
     <?php if ($message): ?>
-        <p class="form-message"><?= $message ?></p>
+        <p class="form-message <?= $messageClass ?>"><?= $message ?></p>
     <?php endif; ?>
 
     <form method="POST" class="profile-form">

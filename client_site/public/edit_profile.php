@@ -11,6 +11,7 @@ if (!isset($_GET['id']) || $_GET['id'] != $_SESSION['clientID']) {
 
 $id = $_GET['id'];
 $message = '';
+$messageClass = '';
 
 $sql = "SELECT * FROM clients WHERE clientID = :clientID";
 $stmt = $pdo->prepare($sql);
@@ -40,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
 
         $message = "Profile updated successfully.";
+        $messageClass = "form-message--success";
 
         $sql = "SELECT * FROM clients WHERE clientID = :clientID";
         $stmt = $pdo->prepare($sql);
@@ -47,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch();
     } else {
         $message = "Please fill in all fields.";
+        $messageClass = "form-message--error";
     }
 }
 ?>
@@ -57,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Edit Profile</h1>
 
     <?php if ($message): ?>
-        <p class="form-message"><?= $message ?></p>
+        <p class="form-message <?= $messageClass ?>"><?= $message ?></p>
     <?php endif; ?>
 
     <form method="POST" class="profile-form">

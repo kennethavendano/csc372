@@ -39,6 +39,16 @@ include 'includes/header.php';
       </div>
     </div>
   </div>
+
+  <section class="quote-generator" aria-label="Caption inspiration">
+    <h2 class="quote-generator__title">Caption inspiration</h2>
+    <p id="quote-box" class="quote-generator__box" role="status" aria-live="polite">
+      Loading inspiration...
+    </p>
+    <button id="new-quote-btn" class="quote-generator__btn" type="button">
+      New quote
+    </button>
+  </section>
 </main>
 
 <?php include 'includes/footer.php'; ?>
